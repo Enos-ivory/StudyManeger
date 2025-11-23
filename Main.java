@@ -14,6 +14,7 @@ public class Main {
             System.out.println("3. Atualizar tempo de estudo");
             System.out.println("4. Excluir matéria");
             System.out.println("5. Tempo total de estudos");
+            System.out.println("6. anotacoes ");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             option = scanner1.nextInt();
