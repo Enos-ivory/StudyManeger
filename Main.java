@@ -6,29 +6,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner1 = new Scanner(System.in);
         StudyManeger study = new StudyManeger();
+        Anotations text = new Anotations();
         int option;
         do {
-            System.out.println("\n=== GERENCIADOR DE ESTUDOS ===");
-            System.out.println("1. Adicionar matéria");
-            System.out.println("2. Listar matérias");
-            System.out.println("3. Atualizar tempo de estudo");
-            System.out.println("4. Excluir matéria");
-            System.out.println("5. Tempo total de estudos");
-            System.out.println("6. anotacoes ");
-            System.out.println("0. Sair");
-            System.out.print("Escolha uma opção: ");
+
+            study.menu();
             option = scanner1.nextInt();
             scanner1.nextLine(); // limpar buffer
 
             switch (option) {
                 case 1 -> {
-                    System.out.println("Nome da materia: ");
-                    String nome = scanner1.next();
+                    System.out.println("_Nome_da_materia_: ");
+                    String nome = scanner1.nextLine();
 
-                    System.out.println("quantidade de tempo da materia: ");
+                    System.out.println("_quantidade_de_tempo_da_materia_: ");
                     int tempo = scanner1.nextInt();
 
-                    System.out.println("informações sobre a mateira: ");
+                    System.out.println("_informações_sobre_a_mateira_: ");
                     String info = scanner1.next();
 
                     study.adicionarMateria(nome, tempo, info);
@@ -37,20 +31,32 @@ public class Main {
                     study.listar();
                 }
                 case 3 ->{
-                    System.out.println("nome da materia: ");
+                    System.out.println("_nome_da_materia_: ");
                     String nome = scanner1.nextLine();
                     System.out.println("tempo: ");
                     int tempo = scanner1.nextInt();
                     study.atualizar(nome, tempo);
                 }
                 case 4 -> {
-                    System.out.println("nome da materia: ");
+                    System.out.println("__nome_da_materia__: ");
                     String nome = scanner1.nextLine();
                     study.removerMateria(nome);
                 }
                 case 5 -> {
-                    System.out.println("soma tempo toatal: ");
+                    System.out.println("__soma_tempo_toatal__: ");
                     study.calculartempoTotal();
+                }
+                case 6 ->{
+                    System.out.println("__adcionando__uma__anotação__ ");
+                    System.out.println("digite a anotaçõe: ");
+                    String anota = scanner1.nextLine();
+
+                    text.adAnotacao(anota);
+                    text.showAnotation();
+                }
+                case 7 ->{
+                    System.out.println("\n___listando_as_anotações___");
+                    text.showAnotation();
                 }
                 case 0 -> System.out.println("Encerrando o programa...");
                 default -> System.out.println("Opção inválida!");

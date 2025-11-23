@@ -7,7 +7,18 @@ import java.util.Scanner;
 public class StudyManeger {
    private List<Subjects> listSubject = new ArrayList<>();
 
-
+    public void menu(){
+        System.out.println("\n=== GERENCIADOR DE ESTUDOS ===");
+        System.out.println("1. Adicionar matéria");
+        System.out.println("2. Listar matérias");
+        System.out.println("3. Atualizar tempo de estudo");
+        System.out.println("4. Excluir matéria");
+        System.out.println("5. Tempo total de estudos");
+        System.out.println("6. adcionar anotações ");
+        System.out.println("7. listar anotações ");
+        System.out.println("0. Sair");
+        System.out.print("Escolha uma opção: ");
+    }
     public void adicionarMateria(String nome, int tempo,String info) {
         listSubject.add(new Subjects(nome, tempo, info));
         System.out.println("Matéria adicionada com sucesso!");
